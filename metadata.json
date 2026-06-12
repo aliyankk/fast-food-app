@@ -1,0 +1,6 @@
+{
+  "name": "Kami Gourmet",
+  "description": "An ultra-premium dining & catalog experience for Kami Gourmet, Korangi, Karachi. Crafting hand-charred royal BBQ, artisanal burgers, and golden crispy sides. Built with a sophisticated high-end aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

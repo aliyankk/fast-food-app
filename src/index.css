@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Sans+Arabic:wght@400;600;700;900&family=Satisfy&family=Lilita+One&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Noto Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-satisfy: "Satisfy", cursive;
+  --font-lilita: "Lilita One", sans-serif;
+  --color-brand-red: #5c0011; /* Ultra-luxury deep Burgundy */
+  --color-brand-red-dark: #3a000a; /* Royal Cabernet */
+  --color-brand-red-light: #800016; /* Imperial Crimson */
+  --color-brand-yellow: #D4AF37; /* Metallic Classic Gold */
+  --color-brand-yellow-dark: #B8860B; /* Dark Goldenrod Luxury */
+  --color-brand-yellow-light: #F9F5EB; /* Fine Champagne Cream */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #faf8f5;
+}
+
+/* Custom Scrollbar Styles matching KAMI's Red & Gold Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f4ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5c0011 0%, #D4AF37 100%);
+  border: 1px solid #f7f4ed;
+  border-radius: 9999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #800016 0%, #B8860B 100%);
+}
+
+/* Firefox scrollbar fallback styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5c0011 #f7f4ed;
+}
+
+/* Custom styles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* High end luxury grain & pattern background */
+.bg-wavy-pattern {
+  background-color: #fdfbf7;
+  background-image: 
+    /* 1. Fine paper texture grain noise for expensive tactile feeling */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E"),
+    /* 2. Soft elegant brand gold radial glow top-left */
+    radial-gradient(circle at 10% 15%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+    /* 3. Soft elegant brand red radial glow bottom-right */
+    radial-gradient(circle at 90% 85%, rgba(92, 0, 17, 0.07) 0%, transparent 60%),
+    /* 4. Elegant repeating food doodle art outlines in subtle champagne ink */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-opacity='0.15' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 40 c0-10 16-10 16 0 h-16 z M27 41 h22 a1 1 0 0 1 1 1.5 v1 h-24 v-1 a1 1 0 0 1 1-1.5 z M32 47 c1 1 5 1 6 0'/%3E%3Cpath d='M140 45 l-4 25 h16 l-4 -25 z M137 45 h22'/%3E%3Cpath d='M35 125 l3 -18 h16 l3 18 z M39 107 v-10 M44 107 v-12'/%3E%3Cpath d='M144 120 l12 18 h-24 z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 100% 100%, 100% 100%, 180px 180px;
+}
+
+/* Luxury Royal Gold Shimmer effect */
+.bg-gold-luxury-gradient {
+  background: linear-gradient(135deg, #FFFdd0 0%, #D4AF37 40%, #AA7C11 75%, #FFF8DC 100%);
+  background-size: 200% 200%;
+  animation: goldShimmer 6s ease infinite;
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Premium Gold Text Clipping Gradients */
+.text-gold-luxury {
+  background: linear-gradient(135deg, #FFF2CC 0%, #F3D063 30%, #D4AF37 70%, #9F7925 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-luxury-light {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 35%, #F4D375 75%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-luxury-gold {
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+/* Elite layered shadows with fine gold ambient occlusion */
+.shadow-luxury-glow {
+  box-shadow: 0 15px 40px -15px rgba(92, 0, 17, 0.08), 0 1px 3px rgba(212, 175, 55, 0.04);
+}
+
+.shadow-luxury-glow-hover {
+  transition: all 400s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-luxury-glow-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -20px rgba(92, 0, 17, 0.16), 0 0 25px rgba(212, 175, 55, 0.22);
+}
+
+/* Sticky active style or scroll targets */
+.scroll-mt-header {
+  scroll-margin-top: 150px; /* Precise height spacing */
+}
+
+/* Elegant luxury sweeping shine */
+@keyframes luxurySweep {
+  0% { left: -100%; }
+  50% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.luxury-shine-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-shine-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: luxurySweep 8s infinite ease-in-out;
+}
+
+/* Hardware-Accelerated Floating Animations for background watermarks */
+@keyframes floatBurger {
+  0%, 100% { transform: translateY(0) rotate(-10deg) translateZ(0); }
+  50% { transform: translateY(-14px) rotate(-7deg) translateZ(0); }
+}
+@keyframes floatFries {
+  0%, 100% { transform: translateY(0) rotate(15deg) translateZ(0); }
+  50% { transform: translateY(16px) rotate(12deg) translateZ(0); }
+}
+@keyframes floatBbq {
+  0%, 100% { transform: translateY(0) rotate(8deg) translateZ(0); }
+  50% { transform: translateY(-12px) rotate(11deg) translateZ(0); }
+}
+@keyframes floatRoll {
+  0%, 100% { transform: translateY(0) rotate(-18deg) translateZ(0); }
+  50% { transform: translateY(14px) rotate(-14deg) translateZ(0); }
+}
+@keyframes slowRotate {
+  from { transform: rotate(0deg) translateZ(0); }
+  to { transform: rotate(360deg) translateZ(0); }
+}
+
+.float-bg-burger {
+  animation: floatBurger 8s ease-in-out infinite;
+  will-change: transform;
+}
+.float-bg-fries {
+  animation: floatFries 10s ease-in-out infinite;
+  will-change: transform;
+}
+.float-bg-bbq {
+  animation: floatBbq 9s ease-in-out infinite;
+  will-change: transform;
+}
+.float-bg-roll {
+  animation: floatRoll 11s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-slow-rotate {
+  animation: slowRotate 85s linear infinite;
+  will-change: transform;
+}
+.animate-spin-lazy {
+  animation: spin 16s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
